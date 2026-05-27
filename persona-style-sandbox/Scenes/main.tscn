@@ -8,17 +8,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="." unique_id=1379729288]
+[node name="Layout" type="VBoxContainer" parent="." unique_id=759597191]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -122.0
-offset_top = -11.0
-offset_right = 123.0
-offset_bottom = 12.0
+offset_left = -82.5
+offset_right = 82.5
+offset_bottom = 329.0
 grow_horizontal = 2
-grow_vertical = 2
-text = "PLACEHOLDER MOTHERFUCKER"
+scale = Vector2(1.8, 1.8)
+theme_override_constants/separation = 20
+
+[node name="Leblanc" type="Label" parent="Layout" unique_id=1280708779]
+layout_mode = 2
+text = "Welcome to Leblanc"
+horizontal_alignment = 1
+
+[node name="TalkButton" type="Button" parent="Layout" unique_id=1711249712]
+layout_mode = 2
+text = "Talk to Sojiro"
+
+[node name="WorkButton" type="Button" parent="Layout" unique_id=458883983]
+layout_mode = 2
+text = "Go to work"
+
+[node name="StudyButton" type="Button" parent="Layout" unique_id=1274897649]
+layout_mode = 2
+text = "Study"
+
+[node name="CraftButton" type="Button" parent="Layout" unique_id=837393310]
+layout_mode = 2
+text = "Crafting"
+
+[node name="ShowerButton" type="Button" parent="Layout" unique_id=1039521548]
+layout_mode = 2
+text = "Shower"
+
+[node name="HorrorButton" type="Button" parent="Layout" unique_id=2078608237]
+layout_mode = 2
+text = "Watch Horror Movie"
