@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ckdo2k4x0h3v4"]
 
 [ext_resource type="Texture2D" uid="uid://h3ioyjw54soh" path="res://Assets/Sprites/TitleScreen/Background.png" id="1_ekrfg"]
+[ext_resource type="Script" uid="uid://bq1atywexg046" path="res://Scenes/title.gd" id="1_fp2oq"]
 [ext_resource type="Texture2D" uid="uid://c4l2lb63k54xr" path="res://Assets/Sprites/TitleScreen/TitleArt.png" id="1_w31pl"]
 
 [node name="Title" type="Control" unique_id=1955810762]
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fp2oq")
 
 [node name="BackgroundRect" type="TextureRect" parent="." unique_id=1097194051]
 visible = false
@@ -57,7 +59,9 @@ layout_mode = 2
 text = "Play The  Game"
 
 [node name="OptionsButton" type="Button" parent="Layout" unique_id=699915113]
+visible = false
 layout_mode = 2
+disabled = true
 text = "Options"
 
 [node name="QuitButtom" type="Button" parent="Layout" unique_id=304835644]
