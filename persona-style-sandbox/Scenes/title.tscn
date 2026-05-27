@@ -1,9 +1,65 @@
 [gd_scene format=3 uid="uid://ckdo2k4x0h3v4"]
 
+[ext_resource type="Texture2D" uid="uid://h3ioyjw54soh" path="res://Assets/Sprites/TitleScreen/Background.png" id="1_ekrfg"]
+[ext_resource type="Texture2D" uid="uid://c4l2lb63k54xr" path="res://Assets/Sprites/TitleScreen/TitleArt.png" id="1_w31pl"]
+
 [node name="Title" type="Control" unique_id=1955810762]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="BackgroundRect" type="TextureRect" parent="." unique_id=1097194051]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -146.5
+offset_right = 260.0
+offset_bottom = 146.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ekrfg")
+
+[node name="TitleRect" type="TextureRect" parent="." unique_id=2008533500]
+layout_mode = 0
+offset_left = 571.0
+offset_top = 170.00002
+offset_right = 571.0
+offset_bottom = 170.00002
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("1_w31pl")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Layout" type="VBoxContainer" parent="." unique_id=1331741415]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.99997
+offset_top = 17.0
+offset_right = -33.0
+offset_bottom = 393.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.255, 2.255)
+
+[node name="PlayButton" type="Button" parent="Layout" unique_id=587569013]
+layout_mode = 2
+text = "Play The  Game"
+
+[node name="OptionsButton" type="Button" parent="Layout" unique_id=699915113]
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButtom" type="Button" parent="Layout" unique_id=304835644]
+layout_mode = 2
+text = "Quit"
