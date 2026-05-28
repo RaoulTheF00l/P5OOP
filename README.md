@@ -5,7 +5,7 @@ This is a non-commercial fan project. Persona 5 and all related properties are o
 
 About
 Persona: Out of Phase adapts an original Persona 5 fan fiction into a playable 2D demake. The game follows the story of the fic, reimagined through pixel art visuals inspired by the PS1/GBA era.
-📖 Read the fan fiction: (link coming soon)
+📖 Read the fan fiction: https://www.webnovel.com/book/34622084700862405
 Status
 🚧 Early development — currently building out core systems.
 Built With
