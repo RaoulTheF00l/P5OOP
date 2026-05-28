@@ -1,6 +1,8 @@
 extends Control
 
-enum CombatState {PLAYER_TURN, ENEMY_TURN, WON, LOST}
+
+enum CombatState {PLAYER_TURN, PLAYER_ATTACK, PLAYER_MATK, ENEMY_TURN, ENEMY_ATTACK, WON, LOST}
+
 
 var state: CombatState = CombatState.PLAYER_TURN
 var enemy_name: String = "Jack Frost"
@@ -10,37 +12,84 @@ var enemy_attack: int = 12
 var enemy_def: int = 8
 
 
+@onready var attack_button: Button = $ActionMenu/AttackButton
+@onready var skill_button: Button = $ActionMenu/SkillButton
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	attack_button.pressed.connect(_on_attack_button_pressed)
+	skill_button.pressed.connect(_on_skill_button_pressed)
+	
+	update_ui()
+	combat_handler()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+func combat_handler() -> void:
+	if state == CombatState.PLAYER_TURN:
+		set_buttons_enabled(true)
+	else:
+		set_buttons_enabled(false)
+
 func update_ui() -> void:
 	$EnemyArea/EnemyName.text = enemy_name
 	$EnemyArea/EnemyHP.text = "Hp: " + str(enemy_hp) + "/" + str(enemy_max_hp)
 	$PlayerName.text = "Ren"
 	$HPLabel.text = "HP: " + str(PlayerStats.hp) + "/" + str(PlayerStats.max_hp)
 	$SPLabel.text = "SP: " + str(PlayerStats.sp) + "/" + str(PlayerStats.max_sp)
-
+	$CombatLog.text = "Current State: " + str(state)
 
 func set_buttons_enabled(enabled: bool) -> void:
-	$ActionMenu/AttackButton.disabled = !enabled
-	$ActionMenu/SkillButon.disabled =  !enabled
-
+	attack_button.disabled = !enabled
+	if PlayerStats.sp > 10:
+		skill_button.disabled = !enabled
+	else:
+		skill_button.disabled = true
 
 func _on_attack() -> void:
-	pass
-
+	state = CombatState.PLAYER_ATTACK
+	var damage = PlayerStats.atk - enemy_def
+	enemy_hp -= damage
+	check_enemy_defeated()
+	update_ui()
 
 func _on_skill() -> void:
-	pass
-
+	state = CombatState.PLAYER_MATK
+	var damage = PlayerStats.matk - enemy_def
+	enemy_hp -= damage
+	PlayerStats.sp -= 10
+	check_enemy_defeated()
+	update_ui()
 
 func check_enemy_defeated() -> void:
-	pass
+	if enemy_hp <= 0:
+		state = CombatState.WON
+		update_ui()
 
+func check_player_defeated() -> void:
+	if PlayerStats.hp <= 0:
+		state = CombatState.LOST
+		update_ui()
 
-func enemy_turn() -> void:
-	pass
+func reset() -> void:
+	state = CombatState.PLAYER_TURN
+	PlayerStats.hp = PlayerStats.max_hp
+	PlayerStats.sp = PlayerStats.max_sp
+	update_ui()
+
+func _on_attack_button_pressed() -> void:
+	_on_attack()
+
+func _on_skill_button_pressed() -> void:
+	_on_skill()
+
+func _on_enemy_turn() -> void:
+	_on_enemy_attack()
+
+func _on_enemy_attack() -> void:
+	state = CombatState.ENEMY_ATTACK
+	var damage = enemy_attack - PlayerStats.def
+	PlayerStats.hp -= damage
+	check_player_defeated()
+	update_ui()
+
+#to add: On_scene_change. On_battle_rewards_scene, return to debug menu button
