@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://itr2e7g8rng4"]
+
+[node name="BattleRewards" type="Control" unique_id=833685738]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Layout" type="VBoxContainer" parent="." unique_id=804248989]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -228.0
+offset_right = -24.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_constants/separation = 40
+
+[node name="expLabel" type="Label" parent="Layout" unique_id=301575884]
+layout_mode = 2
+text = "EXP: "
+horizontal_alignment = 1
+
+[node name="yenLabel" type="Label" parent="Layout" unique_id=1856980910]
+layout_mode = 2
+text = "Yen: "
+horizontal_alignment = 1
+
+[node name="acceptButton" type="Button" parent="Layout" unique_id=1553370165]
+layout_mode = 2
+text = "Accept"

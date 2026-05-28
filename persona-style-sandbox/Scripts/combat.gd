@@ -50,6 +50,8 @@ func _on_attack() -> void:
 	var damage = PlayerStats.atk - enemy_def
 	enemy_hp -= damage
 	check_enemy_defeated()
+	if state != CombatState.WON:
+		_on_enemy_turn()
 	update_ui()
 
 func _on_skill() -> void:
@@ -90,6 +92,9 @@ func _on_enemy_attack() -> void:
 	var damage = enemy_attack - PlayerStats.def
 	PlayerStats.hp -= damage
 	check_player_defeated()
+	if state != CombatState.LOST:
+		state = CombatState.PLAYER_TURN
+		combat_handler()
 	update_ui()
 
 #to add: On_scene_change. On_battle_rewards_scene, return to debug menu button
