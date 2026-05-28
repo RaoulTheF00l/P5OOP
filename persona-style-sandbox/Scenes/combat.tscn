@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://c2yigykwselsv"]
+
+[ext_resource type="Script" uid="uid://brah8trvir6e5" path="res://Scripts/combat.gd" id="1_4ln8h"]
+[ext_resource type="Texture2D" uid="uid://byso2j4xkhhju" path="res://Assets/Sprites/Characters/MC/Ren_uniform_battler.png" id="1_fe60u"]
+[ext_resource type="Texture2D" uid="uid://w23i64srmyao" path="res://Assets/Sprites/Characters/Enemy/MagicianArcana/JackFrost_idle.png" id="2_4ln8h"]
+
+[node name="combat" type="Control" unique_id=1740060914]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ln8h")
+
+[node name="EnemyArea" type="VBoxContainer" parent="." unique_id=2062906119]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+
+[node name="EnemyName" type="Label" parent="EnemyArea" unique_id=174371194]
+layout_mode = 2
+text = "PLACEHOLDER"
+
+[node name="EnemyHP" type="Label" parent="EnemyArea" unique_id=179257165]
+layout_mode = 2
+text = "HP: 100/100"
+
+[node name="PartyInfo" type="VBoxContainer" parent="." unique_id=1950631527]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PlayerName" type="Label" parent="PartyInfo" unique_id=1971685633]
+layout_mode = 2
+text = "Ren"
+
+[node name="HPLabel" type="Label" parent="PartyInfo" unique_id=279317294]
+layout_mode = 2
+text = "HP: 100/100"
+
+[node name="SPlabel" type="Label" parent="PartyInfo" unique_id=66990815]
+layout_mode = 2
+text = "SP: 60/60"
+
+[node name="ActionMenu" type="HBoxContainer" parent="." unique_id=672419786]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -81.0
+offset_right = 34.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="AttackButton" type="Button" parent="ActionMenu" unique_id=1740150655]
+layout_mode = 2
+text = "Attack"
+
+[node name="SkillButton" type="Button" parent="ActionMenu" unique_id=1043060449]
+layout_mode = 2
+text = "Skill"
+
+[node name="CombatLog" type="Label" parent="." unique_id=1047924838]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RenUniformBattler" type="Sprite2D" parent="." unique_id=874375602]
+position = Vector2(1039, 245.99998)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("1_fe60u")
+
+[node name="JackFrostIdle" type="Sprite2D" parent="." unique_id=1345192412]
+position = Vector2(121.99994, 206)
+scale = Vector2(0.365, 0.365)
+texture = ExtResource("2_4ln8h")
