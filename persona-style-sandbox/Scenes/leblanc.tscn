@@ -1,3 +1,27 @@
 [gd_scene format=3 uid="uid://c6551bsl14tkl"]
 
+[ext_resource type="Texture2D" uid="uid://btbyty2mrgodm" path="res://Assets/Sprites/Characters/MC/Ren.png" id="1_0ul7w"]
+[ext_resource type="Script" uid="uid://dg328mwkyd8s6" path="res://player.gd" id="1_aegj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aegj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ul7w"]
+
 [node name="Leblanc" type="Node2D" unique_id=1866167341]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1298255225]
+position = Vector2(210, 131)
+script = ExtResource("1_aegj7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=784685514]
+texture = ExtResource("1_0ul7w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=441728918]
+shape = SubResource("RectangleShape2D_aegj7")
+
+[node name="BG" type="StaticBody2D" parent="." unique_id=69530450]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BG" unique_id=1177362415]
+shape = SubResource("RectangleShape2D_0ul7w")
+
+[node name="NPC" type="Node2D" parent="." unique_id=644680410]
