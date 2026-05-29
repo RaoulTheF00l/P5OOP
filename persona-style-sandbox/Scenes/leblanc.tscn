@@ -12,12 +12,12 @@
 [node name="Leblanc" type="Node2D" unique_id=1866167341]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1298255225]
-position = Vector2(842, 317)
+position = Vector2(697, 492)
 script = ExtResource("1_aegj7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=784685514]
-position = Vector2(32.000004, -8.000001)
-scale = Vector2(3.37, 3.37)
+position = Vector2(31, -9)
+scale = Vector2(3.19, 3.19)
 texture = ExtResource("1_0ul7w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=441728918]
@@ -27,6 +27,7 @@ shape = SubResource("RectangleShape2D_aegj7")
 position = Vector2(-210, -131)
 
 [node name="BG" type="Node2D" parent="." unique_id=1928616389]
+position = Vector2(-136, -53)
 
 [node name="PLACEHOLDER" type="TextureRect" parent="BG" unique_id=180548535]
 z_index = -1
@@ -40,7 +41,7 @@ texture = ExtResource("3_51s07")
 position = Vector2(771, 342)
 
 [node name="Enemy" type="StaticBody2D" parent="NPC" unique_id=69530450]
-position = Vector2(329, 39)
+position = Vector2(198, 18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Enemy" unique_id=1177362415]
 shape = SubResource("RectangleShape2D_0ul7w")
