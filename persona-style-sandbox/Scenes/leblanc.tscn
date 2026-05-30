@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6551bsl14tkl"]
 
 [ext_resource type="Texture2D" uid="uid://btbyty2mrgodm" path="res://Assets/Sprites/Characters/MC/Ren.png" id="1_0ul7w"]
-[ext_resource type="Script" uid="uid://dg328mwkyd8s6" path="res://player.gd" id="1_aegj7"]
+[ext_resource type="Script" uid="uid://dg328mwkyd8s6" path="res://Scripts/player.gd" id="1_aegj7"]
 [ext_resource type="Texture2D" uid="uid://1657mym05r7s" path="res://Assets/Sprites/Backgrounds/Leblanc/Leblanc_PLACEHOLDER.png" id="3_51s07"]
 [ext_resource type="Texture2D" uid="uid://w23i64srmyao" path="res://Assets/Sprites/Characters/Enemy/MagicianArcana/JackFrost_idle.png" id="3_vuh47"]
 [ext_resource type="Texture2D" uid="uid://b84pmb8ku0asg" path="res://Assets/Sprites/Characters/NPC/sojiro_placeholder_transparent.png" id="5_irqcq"]
@@ -9,8 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aegj7"]
 size = Vector2(55, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sgbg"]
-size = Vector2(73, 133)
+[sub_resource type="CircleShape2D" id="CircleShape2D_irqcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ul7w"]
 size = Vector2(55.5, 24.5)
@@ -100,13 +99,16 @@ shape = SubResource("RectangleShape2D_aegj7")
 [node name="Camera2D" type="Camera2D" parent="Actors/Player" unique_id=2096566999]
 position = Vector2(-210, -131)
 
-[node name="Interactable" type="Area2D" parent="Actors/Player" unique_id=1411538499]
+[node name="InteractZone" type="Area2D" parent="Actors/Player" unique_id=1411538499]
+light_mask = 2
+visibility_layer = 2
 z_index = 2
 
-[node name="InteractShape" type="CollisionShape2D" parent="Actors/Player/Interactable" unique_id=1683710582]
+[node name="InteractShape" type="CollisionShape2D" parent="Actors/Player/InteractZone" unique_id=1683710582]
 z_index = 2
 position = Vector2(31.5, -14.5)
-shape = SubResource("RectangleShape2D_3sgbg")
+scale = Vector2(4.12, 4.12)
+shape = SubResource("CircleShape2D_irqcq")
 
 [node name="NPC" type="Node2D" parent="Actors" unique_id=644680410]
 position = Vector2(745, 144)
@@ -124,6 +126,8 @@ position = Vector2(4, 26.25)
 shape = SubResource("RectangleShape2D_0ul7w")
 
 [node name="Interactable" type="Area2D" parent="Actors/NPC/TestNPC" unique_id=1878445303]
+light_mask = 2
+visibility_layer = 2
 z_index = 2
 
 [node name="InteractShape" type="CollisionShape2D" parent="Actors/NPC/TestNPC/Interactable" unique_id=280959503]
@@ -143,6 +147,8 @@ position = Vector2(640.90967, 350.1134)
 shape = SubResource("RectangleShape2D_unod2")
 
 [node name="Interactable" type="Area2D" parent="Actors/NPC/SojiroTest" unique_id=1327705406]
+light_mask = 2
+visibility_layer = 2
 z_index = 2
 
 [node name="InteractShape" type="CollisionShape2D" parent="Actors/NPC/SojiroTest/Interactable" unique_id=1998850050]
