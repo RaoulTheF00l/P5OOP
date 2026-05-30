@@ -91,6 +91,3 @@ texture = ExtResource("1_fe60u")
 position = Vector2(121.99994, 206)
 scale = Vector2(0.365, 0.365)
 texture = ExtResource("2_4ln8h")
-
-[connection signal="pressed" from="ActionMenu/AttackButton" to="." method="_on_attack_button_pressed"]
-[connection signal="pressed" from="ActionMenu/SkillButton" to="." method="_on_skill_button_pressed"]
