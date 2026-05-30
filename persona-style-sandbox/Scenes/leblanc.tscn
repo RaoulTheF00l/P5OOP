@@ -100,9 +100,11 @@ shape = SubResource("RectangleShape2D_aegj7")
 [node name="Camera2D" type="Camera2D" parent="Actors/Player" unique_id=2096566999]
 position = Vector2(-210, -131)
 
-[node name="InteractableArea" type="Area2D" parent="Actors/Player" unique_id=1411538499]
+[node name="Interactable" type="Area2D" parent="Actors/Player" unique_id=1411538499]
+z_index = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Player/InteractableArea" unique_id=1683710582]
+[node name="InteractShape" type="CollisionShape2D" parent="Actors/Player/Interactable" unique_id=1683710582]
+z_index = 2
 position = Vector2(31.5, -14.5)
 shape = SubResource("RectangleShape2D_3sgbg")
 
@@ -122,26 +124,28 @@ position = Vector2(4, 26.25)
 shape = SubResource("RectangleShape2D_0ul7w")
 
 [node name="Interactable" type="Area2D" parent="Actors/NPC/TestNPC" unique_id=1878445303]
+z_index = 2
 
 [node name="InteractShape" type="CollisionShape2D" parent="Actors/NPC/TestNPC/Interactable" unique_id=280959503]
 z_index = 2
 position = Vector2(1, -7.5)
 shape = SubResource("RectangleShape2D_wk17e")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Actors/NPC" unique_id=1168874779]
+[node name="SojiroTest" type="StaticBody2D" parent="Actors/NPC" unique_id=1168874779]
 scale = Vector2(0.11, 0.11)
 
-[node name="SojiroSprite" type="Sprite2D" parent="Actors/NPC/StaticBody2D" unique_id=2032771396]
+[node name="SojiroSprite" type="Sprite2D" parent="Actors/NPC/SojiroTest" unique_id=2032771396]
 position = Vector2(645.4548, -245.45454)
 texture = ExtResource("5_irqcq")
 
-[node name="Shape" type="CollisionShape2D" parent="Actors/NPC/StaticBody2D" unique_id=735123574]
+[node name="Shape" type="CollisionShape2D" parent="Actors/NPC/SojiroTest" unique_id=735123574]
 position = Vector2(640.90967, 350.1134)
 shape = SubResource("RectangleShape2D_unod2")
 
-[node name="Interactable" type="Area2D" parent="Actors/NPC/StaticBody2D" unique_id=1327705406]
+[node name="Interactable" type="Area2D" parent="Actors/NPC/SojiroTest" unique_id=1327705406]
+z_index = 2
 
-[node name="InteractShape" type="CollisionShape2D" parent="Actors/NPC/StaticBody2D/Interactable" unique_id=1998850050]
+[node name="InteractShape" type="CollisionShape2D" parent="Actors/NPC/SojiroTest/Interactable" unique_id=1998850050]
 z_index = 2
 position = Vector2(645.4546, -90.9093)
 shape = SubResource("RectangleShape2D_avprc")
