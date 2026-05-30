@@ -8,6 +8,7 @@ extends Node
 @export var guts: int = 0
 @export var charm: int = 0
 @export var yen: int = 0
+@export var exp:int = 0
 
 ##Helper
 func raise_stat(stat_name: String, amount: int) -> void:
