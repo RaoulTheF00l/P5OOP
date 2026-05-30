@@ -15,16 +15,13 @@ func _physics_process(_delta):
 	move_and_slide()
 
 
-@warning_ignore("unused_parameter")
 func on_interact_zone_entered(area: Area2D) -> void:
 	pass
 
 
-@warning_ignore("unused_parameter")
 func on_interact_zone_exit(area: Area2D) -> void:
 	pass
 
 
-@warning_ignore("unused_parameter")
 func _unhandled_input(event: InputEvent) -> void:
 	pass
