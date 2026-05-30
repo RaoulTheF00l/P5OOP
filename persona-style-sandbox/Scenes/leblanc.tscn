@@ -6,16 +6,58 @@
 [ext_resource type="Texture2D" uid="uid://w23i64srmyao" path="res://Assets/Sprites/Characters/Enemy/MagicianArcana/JackFrost_idle.png" id="3_vuh47"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aegj7"]
-size = Vector2(55, 19)
+size = Vector2(55, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ul7w"]
 size = Vector2(55.5, 31)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_51s07"]
-radius = 26.476404
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irqcq"]
 size = Vector2(510, 157.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51s07"]
+size = Vector2(211.5, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ix82"]
+size = Vector2(45, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdwrd"]
+size = Vector2(178, 248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcpme"]
+size = Vector2(83, 291)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci304"]
+size = Vector2(286, 139)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6n20"]
+size = Vector2(1278, 302)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kmnn"]
+size = Vector2(113, 177)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7ikf"]
+size = Vector2(295, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1jni"]
+size = Vector2(137, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hgfw"]
+size = Vector2(122.5, 435)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27qwg"]
+size = Vector2(164, 1044.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xnyw"]
+size = Vector2(136, 163)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jldt"]
+size = Vector2(1453, 226.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_140kh"]
+size = Vector2(177.5, 1029)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivoy3"]
+size = Vector2(181, 308.5)
 
 [node name="Leblanc" type="Node2D" unique_id=1866167341]
 
@@ -24,6 +66,7 @@ position = Vector2(643, 339)
 
 [node name="LeblancPlaceholdSprite" type="Sprite2D" parent="BG" unique_id=1037146956]
 z_index = -1
+position = Vector2(-1, 5)
 texture = ExtResource("3_51s07")
 
 [node name="Actors" type="Node2D" parent="." unique_id=501906052]
@@ -38,7 +81,7 @@ scale = Vector2(3.19, 3.19)
 texture = ExtResource("1_0ul7w")
 
 [node name="Shape" type="CollisionShape2D" parent="Actors/Player" unique_id=441728918]
-position = Vector2(31.5, 65.5)
+position = Vector2(31.5, 63)
 shape = SubResource("RectangleShape2D_aegj7")
 
 [node name="Camera2D" type="Camera2D" parent="Actors/Player" unique_id=2096566999]
@@ -61,18 +104,74 @@ shape = SubResource("RectangleShape2D_0ul7w")
 
 [node name="Collisions" type="StaticBody2D" parent="." unique_id=642446051]
 
-[node name="Seat1" type="CollisionShape2D" parent="Collisions" unique_id=306550302]
-position = Vector2(241, 211)
-shape = SubResource("CircleShape2D_51s07")
-
-[node name="Seat2" type="CollisionShape2D" parent="Collisions" unique_id=151063112]
-position = Vector2(358, 211)
-shape = SubResource("CircleShape2D_51s07")
-
-[node name="Seat 3" type="CollisionShape2D" parent="Collisions" unique_id=1852983686]
-position = Vector2(476, 209)
-shape = SubResource("CircleShape2D_51s07")
-
 [node name="FrontCounter" type="CollisionShape2D" parent="Collisions" unique_id=693234922]
 position = Vector2(371, 144.25)
 shape = SubResource("RectangleShape2D_irqcq")
+
+[node name="Table" type="CollisionShape2D" parent="Collisions" unique_id=1156087249]
+position = Vector2(542.5, 514)
+shape = SubResource("RectangleShape2D_51s07")
+
+[node name="Stools" type="CollisionShape2D" parent="Collisions" unique_id=2108004814]
+position = Vector2(244, 238)
+shape = SubResource("RectangleShape2D_7ix82")
+
+[node name="Stools2" type="CollisionShape2D" parent="Collisions" unique_id=1253840119]
+position = Vector2(358, 237)
+shape = SubResource("RectangleShape2D_7ix82")
+
+[node name="Stools3" type="CollisionShape2D" parent="Collisions" unique_id=1105087744]
+position = Vector2(473, 238)
+shape = SubResource("RectangleShape2D_7ix82")
+
+[node name="HTable" type="CollisionShape2D" parent="Collisions" unique_id=1040552839]
+position = Vector2(208, 530)
+shape = SubResource("RectangleShape2D_jdwrd")
+
+[node name="Planter" type="CollisionShape2D" parent="Collisions" unique_id=1304260250]
+position = Vector2(804.5, 448.5)
+shape = SubResource("RectangleShape2D_bcpme")
+
+[node name="CoffeeTable" type="CollisionShape2D" parent="Collisions" unique_id=1755512205]
+position = Vector2(977, 479.5)
+shape = SubResource("RectangleShape2D_ci304")
+
+[node name="FrontWall" type="CollisionShape2D" parent="Collisions" unique_id=944723698]
+position = Vector2(638, -49)
+shape = SubResource("RectangleShape2D_a6n20")
+
+[node name="Fridge" type="CollisionShape2D" parent="Collisions" unique_id=862403919]
+position = Vector2(55.5, 84)
+shape = SubResource("RectangleShape2D_0kmnn")
+
+[node name="Couch" type="CollisionShape2D" parent="Collisions" unique_id=176070880]
+position = Vector2(1178.5, 170)
+shape = SubResource("RectangleShape2D_r7ikf")
+
+[node name="CenterTable" type="CollisionShape2D" parent="Collisions" unique_id=1621630936]
+position = Vector2(1151.5, 292)
+shape = SubResource("RectangleShape2D_j1jni")
+
+[node name="Plant" type="CollisionShape2D" parent="Collisions" unique_id=1820240194]
+position = Vector2(1330.25, 130.5)
+shape = SubResource("RectangleShape2D_8hgfw")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Collisions" unique_id=1096455433]
+position = Vector2(-54, 359.75)
+shape = SubResource("RectangleShape2D_27qwg")
+
+[node name="BookCase" type="CollisionShape2D" parent="Collisions" unique_id=1679376647]
+position = Vector2(31, 360)
+shape = SubResource("RectangleShape2D_3xnyw")
+
+[node name="SouthWall" type="CollisionShape2D" parent="Collisions" unique_id=326684518]
+position = Vector2(695.5, 777.75)
+shape = SubResource("RectangleShape2D_8jldt")
+
+[node name="RightWall" type="CollisionShape2D" parent="Collisions" unique_id=1407914458]
+position = Vector2(1418, 357)
+shape = SubResource("RectangleShape2D_140kh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions" unique_id=2034492477]
+position = Vector2(1306, 659)
+shape = SubResource("RectangleShape2D_ivoy3")
