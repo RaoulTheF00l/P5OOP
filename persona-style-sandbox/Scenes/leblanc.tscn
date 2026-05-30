@@ -4,12 +4,16 @@
 [ext_resource type="Script" uid="uid://dg328mwkyd8s6" path="res://player.gd" id="1_aegj7"]
 [ext_resource type="Texture2D" uid="uid://1657mym05r7s" path="res://Assets/Sprites/Backgrounds/Leblanc/Leblanc_PLACEHOLDER.png" id="3_51s07"]
 [ext_resource type="Texture2D" uid="uid://w23i64srmyao" path="res://Assets/Sprites/Characters/Enemy/MagicianArcana/JackFrost_idle.png" id="3_vuh47"]
+[ext_resource type="Texture2D" uid="uid://b84pmb8ku0asg" path="res://Assets/Sprites/Characters/NPC/sojiro_placeholder_transparent.png" id="5_irqcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aegj7"]
 size = Vector2(55, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ul7w"]
 size = Vector2(55.5, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unod2"]
+size = Vector2(591.81836, 528.18176)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irqcq"]
 size = Vector2(510, 157.5)
@@ -27,10 +31,10 @@ size = Vector2(178, 248)
 size = Vector2(83, 291)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ci304"]
-size = Vector2(286, 139)
+size = Vector2(293, 148)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6n20"]
-size = Vector2(1278, 302)
+size = Vector2(1415, 290)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kmnn"]
 size = Vector2(113, 177)
@@ -54,10 +58,10 @@ size = Vector2(136, 163)
 size = Vector2(1453, 226.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_140kh"]
-size = Vector2(177.5, 1029)
+size = Vector2(177.5, 1137)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivoy3"]
-size = Vector2(181, 308.5)
+size = Vector2(175.5, 348)
 
 [node name="Leblanc" type="Node2D" unique_id=1866167341]
 
@@ -99,8 +103,21 @@ scale = Vector2(0.285, 0.285)
 texture = ExtResource("3_vuh47")
 
 [node name="Shape" type="CollisionShape2D" parent="Actors/NPC/TestNPC" unique_id=1177362415]
+z_index = 2
 position = Vector2(4.25, 23.5)
 shape = SubResource("RectangleShape2D_0ul7w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Actors/NPC" unique_id=1168874779]
+scale = Vector2(0.11, 0.11)
+
+[node name="SojiroSprite" type="Sprite2D" parent="Actors/NPC/StaticBody2D" unique_id=2032771396]
+position = Vector2(645.4548, -245.45454)
+texture = ExtResource("5_irqcq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/NPC/StaticBody2D" unique_id=735123574]
+z_index = 2
+position = Vector2(627.27264, 272.72723)
+shape = SubResource("RectangleShape2D_unod2")
 
 [node name="Collisions" type="StaticBody2D" parent="." unique_id=642446051]
 
@@ -133,11 +150,11 @@ position = Vector2(804.5, 448.5)
 shape = SubResource("RectangleShape2D_bcpme")
 
 [node name="CoffeeTable" type="CollisionShape2D" parent="Collisions" unique_id=1755512205]
-position = Vector2(977, 479.5)
+position = Vector2(980.5, 475)
 shape = SubResource("RectangleShape2D_ci304")
 
 [node name="FrontWall" type="CollisionShape2D" parent="Collisions" unique_id=944723698]
-position = Vector2(638, -49)
+position = Vector2(706.5, -55)
 shape = SubResource("RectangleShape2D_a6n20")
 
 [node name="Fridge" type="CollisionShape2D" parent="Collisions" unique_id=862403919]
@@ -169,9 +186,9 @@ position = Vector2(695.5, 777.75)
 shape = SubResource("RectangleShape2D_8jldt")
 
 [node name="RightWall" type="CollisionShape2D" parent="Collisions" unique_id=1407914458]
-position = Vector2(1418, 357)
+position = Vector2(1418, 366.5)
 shape = SubResource("RectangleShape2D_140kh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions" unique_id=2034492477]
-position = Vector2(1306, 659)
+position = Vector2(1308.75, 707)
 shape = SubResource("RectangleShape2D_ivoy3")
