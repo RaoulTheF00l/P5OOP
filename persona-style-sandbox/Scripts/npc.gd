@@ -1,16 +1,30 @@
 extends StaticBody2D
 
 
-enum NPCtype { NPC, ENEMY, FRIENDLY_SHADOW }
+enum NPCType { NPC, ENEMY, FRIENDLY_SHADOW }
 
-@export var npcName : String = "Jack Frost"
-@export var npcType : NPCtype = NPCtype.ENEMY
-@export var dialouge: array[String] = ["Hee-ho-he!"]
+@export var npc_name : String = "Jack Frost"
+@export var npc_type : NPCType = NPCType.ENEMY
+@export var dialouge: Array[String] = ["Hee-ho-he!"]
 
-var dialougeIndex : int = 0
+var dialouge_index : int = 0
 
 func interact() -> void:
-	pass
+	match npc_type:
+		NPCType.FRIENDLY_SHADOW:
+			show_dialouge()
+		NPCType.NPC:
+			show_dialouge()
+		NPCType.ENEMY:
+			print(npc_name + " Attacks!")
+			show_dialouge()
+			get_tree().change_scene_to_file("res://Scenes/combat.tscn")
 
-func showDialouge() -> void:
-	pass
+func show_dialouge() -> void:
+	if dialouge_index < dialouge.size():
+		print(npc_name + ": " + dialouge[dialouge_index])
+		dialouge_index += 1
+	else:
+		dialouge_index = 0
+		print(npc_name + ": " + dialouge[dialouge_index])
+	
