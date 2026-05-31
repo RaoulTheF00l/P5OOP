@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dg328mwkyd8s6" path="res://Scripts/player.gd" id="1_aegj7"]
 [ext_resource type="Texture2D" uid="uid://1657mym05r7s" path="res://Assets/Sprites/Backgrounds/Leblanc/Leblanc_PLACEHOLDER.png" id="3_51s07"]
 [ext_resource type="Texture2D" uid="uid://w23i64srmyao" path="res://Assets/Sprites/Characters/Enemy/MagicianArcana/JackFrost_idle.png" id="3_vuh47"]
+[ext_resource type="Script" uid="uid://cns1h62vmogvh" path="res://Scripts/npc.gd" id="4_7ix82"]
 [ext_resource type="Texture2D" uid="uid://b84pmb8ku0asg" path="res://Assets/Sprites/Characters/NPC/sojiro_placeholder_transparent.png" id="5_irqcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aegj7"]
@@ -113,7 +114,11 @@ z_index = 2
 position = Vector2(745, 144)
 
 [node name="TestNPC" type="StaticBody2D" parent="Actors/NPC" unique_id=69530450]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
 position = Vector2(198, 18)
+script = ExtResource("4_7ix82")
 
 [node name="JackFrostSprite" type="Sprite2D" parent="Actors/NPC/TestNPC" unique_id=1629107615]
 position = Vector2(5, -14)
@@ -128,6 +133,9 @@ position = Vector2(4, 26.25)
 shape = SubResource("RectangleShape2D_0ul7w")
 
 [node name="SojiroTest" type="StaticBody2D" parent="Actors/NPC" unique_id=1168874779]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
 scale = Vector2(0.11, 0.11)
 
 [node name="SojiroSprite" type="Sprite2D" parent="Actors/NPC/SojiroTest" unique_id=2032771396]
@@ -211,3 +219,5 @@ shape = SubResource("RectangleShape2D_140kh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions" unique_id=2034492477]
 position = Vector2(1308.75, 707)
 shape = SubResource("RectangleShape2D_ivoy3")
+
+[connection signal="body_entered" from="Actors/Player/InteractZone" to="Actors/Player" method="_on_interact_zone_body_entered"]
