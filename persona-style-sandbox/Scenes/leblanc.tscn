@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://btbyty2mrgodm" path="res://Assets/Sprites/Characters/MC/Ren.png" id="1_0ul7w"]
 [ext_resource type="Script" uid="uid://dg328mwkyd8s6" path="res://Scripts/player.gd" id="1_aegj7"]
+[ext_resource type="PackedScene" uid="uid://pvwinlt8xult" path="res://Scenes/dialogue_box.tscn" id="1_jdwrd"]
 [ext_resource type="Texture2D" uid="uid://1657mym05r7s" path="res://Assets/Sprites/Backgrounds/Leblanc/Leblanc_PLACEHOLDER.png" id="3_51s07"]
 [ext_resource type="Texture2D" uid="uid://w23i64srmyao" path="res://Assets/Sprites/Characters/Enemy/MagicianArcana/JackFrost_idle.png" id="3_vuh47"]
 [ext_resource type="Script" uid="uid://cns1h62vmogvh" path="res://Scripts/npc.gd" id="4_7ix82"]
@@ -67,6 +68,12 @@ size = Vector2(177.5, 1137)
 size = Vector2(175.5, 348)
 
 [node name="Leblanc" type="Node2D" unique_id=1866167341]
+
+[node name="DialogueBox" parent="." unique_id=49994710 instance=ExtResource("1_jdwrd")]
+offset_left = -188.0
+offset_top = -76.0
+offset_right = -188.0
+offset_bottom = -76.0
 
 [node name="BG" type="Node2D" parent="." unique_id=1853628115]
 position = Vector2(643, 339)
