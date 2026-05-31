@@ -3,6 +3,9 @@ extends StaticBody2D
 @export var npc_name: String = "NPC"
 @export_multiline var dialogue_text: String = "..."
 @export var starts_combat: bool = false
+@export var gives_work: bool = false
+@export var work_yen_reward: int = 1500
+@export var work_kindness_reward: int = 1
 
 var is_interacting: bool = false
 
