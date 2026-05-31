@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func setup(exp: int, yen: int) -> void:
 	reward_exp = exp
-	reward_yen = exp
+	reward_yen = yen
 	update_ui()
 
 func update_ui() -> void:

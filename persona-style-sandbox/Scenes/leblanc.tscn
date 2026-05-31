@@ -14,14 +14,8 @@ size = Vector2(55, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ul7w"]
 size = Vector2(55.5, 24.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk17e"]
-size = Vector2(80, 87)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unod2"]
 size = Vector2(445.4546, 227.49997)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_avprc"]
-size = Vector2(509.09033, 945.4545)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irqcq"]
 size = Vector2(510, 157.5)
@@ -105,12 +99,17 @@ visibility_layer = 2
 z_index = 2
 
 [node name="InteractShape" type="CollisionShape2D" parent="Actors/Player/InteractZone" unique_id=1683710582]
+light_mask = 2
+visibility_layer = 2
 z_index = 2
 position = Vector2(31.5, -14.5)
 scale = Vector2(4.12, 4.12)
 shape = SubResource("CircleShape2D_irqcq")
 
 [node name="NPC" type="Node2D" parent="Actors" unique_id=644680410]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
 position = Vector2(745, 144)
 
 [node name="TestNPC" type="StaticBody2D" parent="Actors/NPC" unique_id=69530450]
@@ -122,18 +121,11 @@ scale = Vector2(0.285, 0.285)
 texture = ExtResource("3_vuh47")
 
 [node name="Shape" type="CollisionShape2D" parent="Actors/NPC/TestNPC" unique_id=1177362415]
-position = Vector2(4, 26.25)
-shape = SubResource("RectangleShape2D_0ul7w")
-
-[node name="Interactable" type="Area2D" parent="Actors/NPC/TestNPC" unique_id=1878445303]
 light_mask = 2
 visibility_layer = 2
 z_index = 2
-
-[node name="InteractShape" type="CollisionShape2D" parent="Actors/NPC/TestNPC/Interactable" unique_id=280959503]
-z_index = 2
-position = Vector2(1, -7.5)
-shape = SubResource("RectangleShape2D_wk17e")
+position = Vector2(4, 26.25)
+shape = SubResource("RectangleShape2D_0ul7w")
 
 [node name="SojiroTest" type="StaticBody2D" parent="Actors/NPC" unique_id=1168874779]
 scale = Vector2(0.11, 0.11)
@@ -145,16 +137,6 @@ texture = ExtResource("5_irqcq")
 [node name="Shape" type="CollisionShape2D" parent="Actors/NPC/SojiroTest" unique_id=735123574]
 position = Vector2(640.90967, 350.1134)
 shape = SubResource("RectangleShape2D_unod2")
-
-[node name="Interactable" type="Area2D" parent="Actors/NPC/SojiroTest" unique_id=1327705406]
-light_mask = 2
-visibility_layer = 2
-z_index = 2
-
-[node name="InteractShape" type="CollisionShape2D" parent="Actors/NPC/SojiroTest/Interactable" unique_id=1998850050]
-z_index = 2
-position = Vector2(645.4546, -90.9093)
-shape = SubResource("RectangleShape2D_avprc")
 
 [node name="Collisions" type="StaticBody2D" parent="." unique_id=642446051]
 
