@@ -2,6 +2,7 @@ extends Control
 
 @onready var yen_label: Label = $Panel/VBoxContainer/YenLabel
 @onready var exp_label: Label = $Panel/VBoxContainer/EXPLabel
+@onready var kindness_label: Label = $Panel/VBoxContainer/KindnessLabel
 
 var last_yen: int = -1
 var last_exp: int = -1
@@ -22,3 +23,4 @@ func refresh() -> void:
 	
 	yen_label.text = "Yen: " + str(PlayerStats.yen)
 	exp_label.text = "Total EXP: " + str(PlayerStats.exp)
+	kindness_label.text = "Kindness: " + str(PlayerStats.kindness)
