@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://btbyty2mrgodm" path="res://Assets/Sprites/Characters/MC/Ren.png" id="1_0ul7w"]
 [ext_resource type="Script" uid="uid://dg328mwkyd8s6" path="res://Scripts/player.gd" id="1_aegj7"]
+[ext_resource type="PackedScene" uid="uid://bvf0opdwvgvip" path="res://Scenes/player_status_ui.tscn" id="1_bcpme"]
 [ext_resource type="PackedScene" uid="uid://pvwinlt8xult" path="res://Scenes/dialogue_box.tscn" id="1_jdwrd"]
 [ext_resource type="Texture2D" uid="uid://1657mym05r7s" path="res://Assets/Sprites/Backgrounds/Leblanc/Leblanc_PLACEHOLDER.png" id="3_51s07"]
 [ext_resource type="Texture2D" uid="uid://w23i64srmyao" path="res://Assets/Sprites/Characters/Enemy/MagicianArcana/JackFrost_idle.png" id="3_vuh47"]
@@ -69,6 +70,12 @@ size = Vector2(175.5, 348)
 
 [node name="Leblanc" type="Node2D" unique_id=1866167341]
 
+[node name="PlayerStatusUI" parent="." unique_id=2014233845 instance=ExtResource("1_bcpme")]
+offset_left = 441.0
+offset_top = 113.0
+offset_right = 441.0
+offset_bottom = 113.0
+
 [node name="DialogueBox" parent="." unique_id=49994710 instance=ExtResource("1_jdwrd")]
 offset_left = -188.0
 offset_top = -76.0
@@ -80,7 +87,7 @@ position = Vector2(643, 339)
 
 [node name="LeblancPlaceholdSprite" type="Sprite2D" parent="BG" unique_id=1037146956]
 z_index = -1
-position = Vector2(-1, 5)
+position = Vector2(0, 18)
 texture = ExtResource("3_51s07")
 
 [node name="Actors" type="Node2D" parent="." unique_id=501906052]
@@ -202,11 +209,11 @@ position = Vector2(980.5, 475)
 shape = SubResource("RectangleShape2D_ci304")
 
 [node name="FrontWall" type="CollisionShape2D" parent="Collisions" unique_id=944723698]
-position = Vector2(706.5, -55)
+position = Vector2(748, -53)
 shape = SubResource("RectangleShape2D_a6n20")
 
 [node name="Fridge" type="CollisionShape2D" parent="Collisions" unique_id=862403919]
-position = Vector2(55.5, 84)
+position = Vector2(68, 86)
 shape = SubResource("RectangleShape2D_0kmnn")
 
 [node name="Couch" type="CollisionShape2D" parent="Collisions" unique_id=176070880]
@@ -222,7 +229,7 @@ position = Vector2(1330.25, 130.5)
 shape = SubResource("RectangleShape2D_8hgfw")
 
 [node name="LeftWall" type="CollisionShape2D" parent="Collisions" unique_id=1096455433]
-position = Vector2(-54, 359.75)
+position = Vector2(-70, 352)
 shape = SubResource("RectangleShape2D_27qwg")
 
 [node name="BookCase" type="CollisionShape2D" parent="Collisions" unique_id=1679376647]

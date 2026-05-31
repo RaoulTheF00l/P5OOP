@@ -1,7 +1,7 @@
 extends Control
 
 @onready var yen_label: Label = $Panel/VBoxContainer/YenLabel
-@onready var exp_label: Label = $Panel/VBoxContainer/ExpLabel
+@onready var exp_label: Label = $Panel/VBoxContainer/EXPLabel
 
 var last_yen: int = -1
 var last_exp: int = -1
