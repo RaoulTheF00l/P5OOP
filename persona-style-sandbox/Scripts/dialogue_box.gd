@@ -14,9 +14,6 @@ var is_open: bool = false
 func _ready() -> void:
 	background.visible = false
 	confirm_button.pressed.connect(_on_confirm_button_pressed)
-	
-	await get_tree().process_frame
-	await show_dialogue("Sojiro", "Get to work.")
 
 
 func show_dialogue(speaker: String, text: String, portrait: Texture2D = null) -> void:
