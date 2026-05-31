@@ -98,6 +98,8 @@ position = Vector2(-210, -131)
 light_mask = 2
 visibility_layer = 2
 z_index = 2
+collision_layer = 2
+collision_mask = 2
 
 [node name="InteractShape" type="CollisionShape2D" parent="Actors/Player/InteractZone" unique_id=1683710582]
 light_mask = 2
@@ -118,6 +120,8 @@ light_mask = 2
 visibility_layer = 2
 z_index = 2
 position = Vector2(198, 18)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("4_7ix82")
 
 [node name="JackFrostSprite" type="Sprite2D" parent="Actors/NPC/TestNPC" unique_id=1629107615]
@@ -137,6 +141,8 @@ light_mask = 2
 visibility_layer = 2
 z_index = 2
 scale = Vector2(0.11, 0.11)
+collision_layer = 2
+collision_mask = 2
 
 [node name="SojiroSprite" type="Sprite2D" parent="Actors/NPC/SojiroTest" unique_id=2032771396]
 position = Vector2(645.4548, -245.45454)
@@ -221,3 +227,4 @@ position = Vector2(1308.75, 707)
 shape = SubResource("RectangleShape2D_ivoy3")
 
 [connection signal="body_entered" from="Actors/Player/InteractZone" to="Actors/Player" method="_on_interact_zone_body_entered"]
+[connection signal="body_exited" from="Actors/Player/InteractZone" to="Actors/Player" method="_on_interact_zone_body_exited"]

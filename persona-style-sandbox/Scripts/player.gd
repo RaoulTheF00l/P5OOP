@@ -2,31 +2,25 @@ extends CharacterBody2D
 
 const SPEED = 100
 
-var nearby_npc = null
+var nearby_npc: Node = null
 
-func _ready():
-	pass
 
-func _physics_process(_delta):
-	var direction = Input.get_vector("Left", "Right", "Up", "Down")
+func _physics_process(_delta: float) -> void:
+	var direction := Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * SPEED
 	move_and_slide()
 
 
-
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and not event.echo and event.pressed:
-		if event.physical_keycode == KEY_Z:
-			if nearby_npc != null:\
-			if nearby_npc != null and nearby_npc.has_method("interact"):
-					nearby_npc.interact()
+	if event.is_action_pressed("Interact"):
+		if nearby_npc != null and nearby_npc.has_method("interact"):
+			nearby_npc.interact()
 
 
 func _on_interact_zone_body_entered(body: Node2D) -> void:
-	nearby_npc = body.get_parent()
-
-
-
+	# The body that enters IS the NPC (npc.gd lives on the StaticBody2D itself),
+	# so we store it directly — no get_parent().
+	nearby_npc = body
 
 
 func _on_interact_zone_body_exited(_body: Node2D) -> void:
