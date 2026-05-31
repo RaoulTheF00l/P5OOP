@@ -28,10 +28,9 @@ var yen_reward: int = 200
 func _ready() -> void:
 	attack_button.pressed.connect(_on_attack_button_pressed)
 	skill_button.pressed.connect(_on_skill_button_pressed)
-	
+
 	update_ui()
 	combat_handler()
-
 
 
 func combat_handler() -> void:
@@ -62,9 +61,10 @@ func _on_attack() -> void:
 	check_enemy_defeated()
 	if state == CombatState.WON:
 		return  # stop here, go_to_rewards() is handling it
-		_on_enemy_turn()
-		update_ui()
-		combat_handler()
+	# These now run on the normal (enemy-survives) path, matching _on_skill().
+	_on_enemy_turn()
+	update_ui()
+	combat_handler()
 
 
 func _on_skill() -> void:
@@ -129,6 +129,10 @@ func _on_enemy_attack() -> void:
 func go_to_rewards() -> void:
 	var rewards_scene = load("res://Scenes/battle_rewards.tscn")
 	var rewards = rewards_scene.instantiate()
-	rewards.setup(exp_reward, yen_reward)
+	# Add to the tree FIRST so the rewards node's @onready labels are wired,
+	# then set it as the current scene so its later change_scene_to_file works,
+	# THEN hand it the values.
 	get_tree().root.add_child(rewards)
+	get_tree().current_scene = rewards
+	rewards.setup(exp_reward, yen_reward)
 	queue_free()
