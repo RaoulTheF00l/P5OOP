@@ -87,19 +87,29 @@ func _on_skill() -> void:
 func check_enemy_defeated() -> void:
 	if enemy_hp <= 0:
 		state = CombatState.WON
+		set_buttons_enabled(false)
 		update_ui()
 		await get_tree().create_timer(0.5).timeout
 		go_to_rewards()
 
+
 func check_player_defeated() -> void:
 	if PlayerStats.hp <= 0:
 		state = CombatState.LOST
+		set_buttons_enabled(false)
 		update_ui()
 		await get_tree().create_timer(0.5).timeout
+		
+		PlayerStats.hp = PlayerStats.max_hp
+		PlayerStats.sp = PlayerStats.max_sp
+		
 		get_tree().change_scene_to_file("res://Scenes/leblanc.tscn")
 
 
-##ADD RESET FUNCTION#
+
+func restore_player() -> void:
+	PlayerStats.hp = PlayerStats.max_hp
+	PlayerStats.sp = PlayerStats.max_sp
 
 
 func _on_attack_button_pressed() -> void:
