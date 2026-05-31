@@ -130,6 +130,10 @@ position = Vector2(198, 18)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("4_7ix82")
+npc_name = "Jack Frost"
+dialogue_text = "Hee he Hee!"
+starts_combat = true
+work_kindness_reward = 0
 
 [node name="JackFrostSprite" type="Sprite2D" parent="Actors/NPC/TestNPC" unique_id=1629107615]
 position = Vector2(5, -14)
@@ -150,6 +154,10 @@ z_index = 2
 scale = Vector2(0.11, 0.11)
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("4_7ix82")
+npc_name = "Sojiro"
+dialogue_text = "Go to work, kid."
+gives_work = true
 
 [node name="SojiroSprite" type="Sprite2D" parent="Actors/NPC/SojiroTest" unique_id=2032771396]
 position = Vector2(645.4548, -245.45454)
