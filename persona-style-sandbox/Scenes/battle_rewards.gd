@@ -23,13 +23,14 @@ func setup(exp: int, yen: int) -> void:
 
 
 func update_ui() -> void:
-	exp_label.text = str(reward_exp)
-	yen_label.text = str(reward_yen)
+	exp_label.text = "Exp: " + str(reward_exp)
+	yen_label.text = "Yen: " + str(reward_yen)
 
 
 func _on_accept_pressed() -> void:
 	PlayerStats.yen += reward_yen
 	PlayerStats.exp += reward_exp
+	accept_button.disabled = true
 
 	print("Ren gained " + str(reward_exp) + " Exp!")
 	print("Ren gained " + str(reward_yen) + " Yen!")
