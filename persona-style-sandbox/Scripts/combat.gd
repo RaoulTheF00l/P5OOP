@@ -1,6 +1,7 @@
 extends Control
 
 
+const SKILL_COST := 10
 enum CombatState {PLAYER_TURN, PLAYER_ATTACK, PLAYER_MATK, ENEMY_TURN, ENEMY_ATTACK, WON, LOST}
 
 
@@ -49,10 +50,7 @@ func update_ui() -> void:
 
 func set_buttons_enabled(enabled: bool) -> void:
 	attack_button.disabled = !enabled
-	if PlayerStats.sp > 10:
-		skill_button.disabled = !enabled
-	else:
-		skill_button.disabled = true
+	skill_button.disabled = !enabled or PlayerStats.sp < SKILL_COST
 
 func _on_attack() -> void:
 	state = CombatState.PLAYER_ATTACK
@@ -68,13 +66,19 @@ func _on_attack() -> void:
 
 
 func _on_skill() -> void:
+	if PlayerStats.sp < SKILL_COST:
+		return
+
 	state = CombatState.PLAYER_MATK
+	
 	var damage = max(1, PlayerStats.matk - enemy_def)
 	enemy_hp -= damage
-	PlayerStats.sp -= 10
+	PlayerStats.sp -= SKILL_COST
+	
 	check_enemy_defeated()
 	if state == CombatState.WON:
 		return
+	
 	_on_enemy_turn()
 	update_ui()
 	combat_handler()
@@ -95,11 +99,7 @@ func check_player_defeated() -> void:
 		get_tree().change_scene_to_file("res://Scenes/leblanc.tscn")
 
 
-func reset() -> void:
-	state = CombatState.PLAYER_TURN
-	PlayerStats.hp = PlayerStats.max_hp
-	PlayerStats.sp = PlayerStats.max_sp
-	update_ui()
+##ADD RESET FUNCTION#
 
 
 func _on_attack_button_pressed() -> void:
